@@ -1,0 +1,32 @@
+
+[data-role="list-divider"] {
+    -webkit-box-shadow: 2px 2px 3px #999; 
+    color: #fff;
+    text-shadow: #000 0 1px 0;
+    font: bold 16px/20px Helvetica, Sans-serif;
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7bd83c), color-stop(50%,#63b243), color-stop(51%,#599b12), color-stop(100%,#408407)); 
+.ui-panel-content-wrap {
+    background-image: url('images/retro_intro.png');
+}
+
+.connectwithus:before{
+  content:url('images/connect.png');
+}
+
+.getdirections:before{
+  content:url('images/directions.png');
+}
+
+
+   .ul-li {
+    color: #fff;            
+    text-shadow: #333 0px 1px 1px;
+}
+
+
+.offline {
+  visibility: hidden;
+  color: #f00;
+  font-style: italic;
+}

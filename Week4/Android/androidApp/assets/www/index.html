@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>
+      StreetLinks Lender Solutions
+    </title>
+    
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="avf.css">
+
+
+
+<script>
+function onSuccess(heading) {
+    alert('Heading: ' + heading.magneticHeading);
+};
+
+function onError(error) {
+    alert('CompassError: ' + error.code);
+};
+
+navigator.compass.getCurrentHeading(onSuccess, onError);
+
+</script>
+  
+
+<script>
+var onSuccess = function(position) {
+    alert('Latitude: '          + position.coords.latitude          + '\n' +
+          'Longitude: '         + position.coords.longitude         + '\n' +
+          'Altitude: '          + position.coords.altitude          + '\n' +
+          'Accuracy: '          + position.coords.accuracy          + '\n' +
+          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+          'Heading: '           + position.coords.heading           + '\n' +
+          'Speed: '             + position.coords.speed             + '\n' +
+          'Timestamp: '         + position.timestamp                + '\n');
+};
+
+// onError Callback receives a PositionError object
+//
+function onError(error) {
+    alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');
+}
+
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
+</script>
+
+
+
+
+
+<script>
+    function init() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    function onDeviceReady() {
+      alert('Welcome to our StreetLinks app!');
+    }
+  </script>
+
+
+
+
+<script>
+ function checkconnection() {
+        checkConnection();
+    }
+
+    function checkConnection() {
+        var networkState = navigator.network.connection.type;
+
+        var states = {};
+        states[Connection.UNKNOWN]  = 'Unknown connection';
+        states[Connection.ETHERNET] = 'Ethernet connection';
+        states[Connection.WIFI]     = 'WiFi connection';
+        states[Connection.CELL_2G]  = 'Cell 2G connection';
+        states[Connection.CELL_3G]  = 'Cell 3G connection';
+        states[Connection.CELL_4G]  = 'Cell 4G connection';
+        states[Connection.NONE]     = 'No network connection';
+
+        alert('Your device has ' + states[networkState]);
+    }
+
+</script>
+
+  </head>
+<body onload="init()">
+    <div data-role="page" data-control-title="Home" id="page1">
+      <div data-role="panel" id="panel11" data-position="left" data-display="reveal"
+    data-theme="a">
+      <ul data-role="listview" data-divider-theme="h" data-inset="false">
+        <li data-role="list-divider" role="heading">
+          Divider
+        </li>
+        <li data-theme="a">
+          <a href="" data-transition="slide">
+            Button
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="#page1" data-transition="slide">
+            Button
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div data-role="panel" id="panel1" data-position="left" data-display="reveal"
+    data-theme="">
+      <ul data-role="listview" data-divider-theme="" data-inset="false">
+        <li data-theme="c">
+          <a href="#page6" data-transition="slide">
+            History
+          </a>
+        </li>
+        <li data-theme="c">
+          <a href="#page5" data-transition="slide">
+            Leadership
+          </a>
+        </li>
+        <li data-theme="c">
+          <a href="#page4" data-transition="slide">
+            Community
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div data-theme="c" data-role="header">
+      <span class="ui-title">
+      </span>
+      <a data-role="button" data-theme="c" href="#panel1" data-icon="bars" data-iconpos="left"
+      class="ui-btn-right">
+        About StreetLinks
+      </a>
+    </div>
+    <div data-role="content">
+      <div style=" text-align:center" data-controltype="image">
+        <img style="width: 75%; height: 75%" src="images/StreetLinks_Logo_no_background.png">
+      </div>
+      <div style=" text-align:center" data-controltype="image">
+        <img style="width: 75%; height: 75%" src="images/mug.png">
+      </div>
+      <div data-controltype="textblock">
+        <p style="text-align: left; ">
+          <span>
+            StreetLinks offers a suite of innovative valuation solutions driven by
+            our commitment to exceptional quality &amp; service.
+          </span>
+        </p>
+      </div>
+      <ul data-role="listview" data-divider-theme="d" data-inset="true">
+        <li data-role="list-divider" role="heading" class="connectwithus">
+          Connect with Streetlinks
+        </li>
+        <li data-theme="c">
+          <a href="#page1" data-transition="slide">
+            View our Photos on Instagram
+          </a>
+        </li>
+        <li data-theme="c">
+          <a href="https://www.facebook.com/StreetLinksLenderSolutions" data-transition="slide">
+            Find us on Facebook
+          </a>
+        </li>
+        <li data-theme="c">
+          <a href="https://twitter.com/StreetLinks" data-transition="slide">
+            Follow us on Twitter
+          </a>
+        </li>
+        <li data-role="list-divider" role="heading" class="getdirections" >
+          Get Directions
+        </li>
+        <li data-theme="c">
+          <a href="#page1" data-transition="slide">
+            7551 S. Shelby Street Indianapolis, IN 46227
+          </a>
+        </li>
+        <li data-theme="c">
+          <a href="#page1" data-transition="slide">
+            1610 N. 2nd Street Suite 101 Milwaukee, WI 53212
+          </a>
+        </li>
+        <li data-theme="c">
+          <a href="#page1" data-transition="slide">
+            5701 E. Hillsborough Ave Tampa, FL 33610
+          </a>
+        </li>
+        <li data-role="list-divider" role="heading" class="checkconnectivity">
+          Check Connectivity
+        </li>
+        <li data-theme="c">
+          <a href="#page1" onclick=checkconnection()>
+            Network Connection
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div data-theme="" data-role="footer" data-position="fixed">
+      <h3>
+        Streetlinks Lender Solutions
+      </h3>
+    </div>
+  </div>
+  <div data-role="page" data-control-title="Community" id="page4">
+    <div data-role="panel" id="panel2" data-position="left" data-display="reveal"
+    data-theme="a">
+      <ul data-role="listview" data-divider-theme="h" data-inset="false">
+        <li data-theme="a">
+          <a href="#page1" data-transition="slide">
+            History
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://www.facebook.com/StreetLinksLenderSolutions" data-transition="slide">
+            Leadership
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://twitter.com/StreetLinks" data-transition="slide">
+            Community
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div data-theme="d" data-role="header">
+      <span class="ui-title">
+      </span>
+      <a data-role="button" data-direction="reverse" data-transition="slide"
+      data-theme="c" href="#page1" data-icon="back" data-iconpos="left" class="ui-btn-left">
+        Back
+      </a>
+    </div>
+    <div data-role="content">
+      <div data-controltype="textblock">
+        <h1>
+          Community Involvement
+        </h1>
+        <p>
+          StreetLinks is proud to be a leader in the mortgage industry and in the
+          communities we represent! Throughout the year, StreetLinks is involved
+          in many community events and we also encourage employee involvement in
+          local and national charitable causes.
+        </p>
+        <h2>
+          StreetLinks Gives Back
+        </h2>
+        <p>
+          <b>
+            Blood Drives
+          </b>
+          <br>
+          We partner with the&nbsp;
+          <a href="http://www.indianablood.org/" target="_blank" title="Indiana Blood Center"
+          data-mce-href="http://www.indianablood.org/">
+            Indiana Blood Center
+          </a>
+          &nbsp;for at least one employee blood drive per year.
+          <br>
+          <br>
+          <b>
+            Food Drives
+          </b>
+          <br>
+          StreetLinks holds regular team and company-wide contests to see who can
+          raise the most food for local pantries.&nbsp;
+          <br>
+          <br>
+          <b>
+            The StreetLinks Green Team
+          </b>
+          <br>
+          Our Green Team has helped us abandon bad habits and reduce our carbon
+          footprint company-wide through promoting small tasks like turning off the
+          bathroom lights and starting office recycling programs.
+          <br>
+          <br>
+          <b>
+            Employee Causes
+          </b>
+          <br>
+          Often, employees will reach out to the company for support for causes
+          they believe in. We do our best to communicate those causes within the
+          company so that all employees have the opportunity to get involved.
+        </p>
+      </div>
+      <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+      <div data-controltype="textblock">
+        <h2>
+          The Annual Backyard Bash Charity Event
+        </h2>
+        <p>
+          StreetLinks' Annual Backyard Bash is held each summer at our headquarters
+          in Indianapolis and we will be expanding to our additional facilities for
+          future events. Each year, we reach out to local businesses and partners
+          for prize donations which are raffled off to StreetLinks employees and
+          their families at the event. All proceeds are given to the local and national
+          charitable foundations chosen by the StreetLinks team. At 2011's 3rd Annual
+          Backyard Bash, we raised $10,500 and donated 3,281 pounds of canned and
+          nonperishable food items to a local pantry.
+        </p>
+        <h3>
+          Get Involved!
+        </h3>
+        <p>
+          Interested in donating to 2013's 5th Annual Backyard Bash? Contact StreetLinks
+          Community Development Team today at&nbsp;
+          <a href="mailto:community@streetlinks.com" data-mce-href="mailto:community@streetlinks.com">
+            community@streetlinks.com
+          </a>
+        </p>
+      </div>
+    </div>
+    <div data-theme="a" data-role="footer" data-position="fixed">
+      <h3>
+        Streetlinks Lender Solutions
+      </h3>
+    </div>
+  </div>
+  <div data-role="page" data-control-title="Leadership" id="page5">
+    <div data-role="panel" id="panel4" data-position="left" data-display="reveal"
+    data-theme="a">
+      <ul data-role="listview" data-divider-theme="h" data-inset="false">
+        <li data-theme="a">
+          <a href="#page1" data-transition="slide">
+            History
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://www.facebook.com/StreetLinksLenderSolutions" data-transition="slide">
+            Leadership
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://twitter.com/StreetLinks" data-transition="slide">
+            Community
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div data-role="panel" id="panel5" data-position="left" data-display="reveal"
+    data-theme="a">
+      <ul data-role="listview" data-divider-theme="h" data-inset="false">
+        <li data-theme="a">
+          <a href="#page1" data-transition="slide">
+            History
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://www.facebook.com/StreetLinksLenderSolutions" data-transition="slide">
+            Leadership
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://twitter.com/StreetLinks" data-transition="slide">
+            Community
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div data-theme="d" data-role="header">
+      <span class="ui-title">
+      </span>
+      <a data-role="button" data-direction="reverse" data-transition="slide"
+      data-theme="c" href="#page1" data-icon="back" data-iconpos="left" class="ui-btn-left">
+        Back
+      </a>
+    </div>
+    <div data-role="content">
+      <div data-controltype="textblock">
+        <h1>
+          StreetLinks Leadership
+        </h1>
+        <p>
+          <b>
+            Steve Haslam
+          </b>
+          <span>
+            &nbsp;-&nbsp;
+          </span>
+          <em>
+            CEO
+          </em>
+          <span>
+          </span>
+        </p>
+        <p>
+          Steve is a 20 year mortgage industry veteran who has led all aspects of
+          national retail and wholesale platforms. Steve also led one of the nation's
+          largest captive appraisal management companies. Steve joined StreetLinks
+          because, "as a former customer ordering thousands of appraisals per month,
+          StreetLinks was the only company who consistently met the demands of everyone
+          in the lending cycle - from LO to Processor to Underwriter to Investor;
+          given the current lending and regulatory environment, and having been a
+          customer of almost every major traditional appraisal management company
+          in my career, StreetLinks is positioned as the 'best of breed' to meet
+          the appraisal needs of this market."
+        </p>
+        <p>
+          <b>
+            Tom Hurst
+          </b>
+          <span>
+            &nbsp;-&nbsp;
+          </span>
+          <em>
+            President
+          </em>
+          <span>
+          </span>
+        </p>
+        <p>
+          As an original founder of StreetLinks, Tom has played a pivotal role in
+          the company’s growth and success since leaving the aviation industry in
+          2002. Tom’s passion and unwavering dedication to quality, service and innovation
+          are contagious, and have helped to propel both StreetLinks and the mortgage
+          industry forward for over 10 years. Tom’s transition from SVP to EVP to
+          President at StreetLinks has allowed him to expand his focus and become
+          an even more integral part of StreetLinks’ growth, product development
+          and commitment to pushing the status quo.
+        </p>
+        <p>
+          <b>
+            Chad Barker
+          </b>
+          <span>
+            &nbsp;-&nbsp;
+          </span>
+          <em>
+            Chief Operating Officer
+          </em>
+          <span>
+          </span>
+        </p>
+        <p>
+          Chad joined Superior Appraisal (the forerunner of StreetLinks) in 1996
+          upon graduation from Indiana University. As a licensed appraiser and astute
+          business developer, Chad was instrumental in the rapid expansion of Superior's
+          client base while simultaneously building Superior's largest team of in-house
+          appraisers. As the company diversified into a national appraisal management
+          company, Chad helped to pioneer the best-of-breed processing and operations
+          platform that differentiates StreetLinks from it's competition today. With
+          a strong focus on business culture, exceptional customer service, and technological
+          systems, Chad continues to execute the ongoing management needs of StreetLinks'
+          unique appraisal quality and delivery platform.
+        </p>
+        <p>
+          <b>
+            Matthew Lautz
+          </b>
+          <span>
+            ,&nbsp;
+          </span>
+          <em>
+            Chief Information Officer
+          </em>
+          <br>
+        </p>
+        <p>
+          As Chief Information Officer, Matthew Lautz is responsible for overseeing
+          all software product development and infrastructure. With a ten year career
+          in building and managing software companies, Lautz started his first software
+          development company at the age of 16. Since, Lautz has held executive leadership
+          roles in several technology and telecom related companies, most recently
+          as President of Corvisa LLC, a lending technology firm which was acquired
+          by StreetLinks in 2010.
+        </p>
+        <p>
+          <b>
+            Kelly Taylor
+          </b>
+          <span>
+            &nbsp;-&nbsp;
+          </span>
+          <em>
+            SVP, National Sales
+          </em>
+          <span>
+          </span>
+        </p>
+        <p>
+          Kelly has 20 years experience in the mortgage industry managing national
+          retail branch systems, multiple location call centers, as well as large
+          broker platforms. With a strong reputation in the industry for outstanding
+          results in both sales and quality he was a perfect fit to assume national
+          sales responsibility for StreetLinks. Having been a mortgage industry leading
+          sales leader he brings a unique perspective to the Appraisal Management
+          business as well as having a strong understanding of the issues facing
+          today's mortgage sales leaders.
+        </p>
+        <p>
+          <b>
+            Donna DelMonte
+          </b>
+          <span>
+            &nbsp;-&nbsp;
+          </span>
+          <em>
+            SVP, Product Development
+          </em>
+          <span>
+          </span>
+        </p>
+        <p>
+          Donna has over 20 years in the mortgage industry managing National Wholesale
+          and Retail lending operations, encompassing the loan process from origination,
+          underwriting, secondary and risk management. Having formally held the position
+          of Chief Credit Officer, Donna brings a wealth of experience in understanding
+          the necessary service expectations and tools needed for StreetLinks clients.
+          The level of knowledge and experience Donna brings to StreetLinks allows
+          her to understand the needs of the clients to evaluate and create products
+          to better enhance efficiency, and create better, reliable products to mitigate
+          risk potential for our customers.
+        </p>
+        <p>
+          <b>
+            Jaime Brownfield
+          </b>
+          <span>
+            &nbsp;-&nbsp;
+          </span>
+          <em>
+            Vice President, Processing
+          </em>
+          <span>
+          </span>
+        </p>
+        <p>
+          Jaime began her career with StreetLinks as a frontline employee early
+          in 2007, and has since grown rapidly with the company. With more than 18
+          years of customer service experience, she understands how each part of
+          the operation functions. She has been instrumental in building relationships
+          both externally and internally, defining processes and procedures and creating
+          techniques to improve the organization in both productivity and quality.
+          Along with her customer service background and knowledge of the operation;
+          Jaime’s abilities to teach, coach, train and mentor are at the heart of
+          her continued growth with Streetlinks and the company’s success.
+        </p>
+      </div>
+    </div>
+    <div data-theme="a" data-role="footer" data-position="fixed">
+      <h3>
+        Streetlinks Lender Solutions
+      </h3>
+    </div>
+  </div>
+  <div data-role="page" data-control-title="History" id="page6">
+    <div data-role="panel" id="panel7" data-position="left" data-display="reveal"
+    data-theme="a">
+      <ul data-role="listview" data-divider-theme="h" data-inset="false">
+        <li data-theme="a">
+          <a href="#page1" data-transition="slide">
+            History
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://www.facebook.com/StreetLinksLenderSolutions" data-transition="slide">
+            Leadership
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://twitter.com/StreetLinks" data-transition="slide">
+            Community
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div data-role="panel" id="panel8" data-position="left" data-display="reveal"
+    data-theme="a">
+      <ul data-role="listview" data-divider-theme="h" data-inset="false">
+        <li data-theme="a">
+          <a href="#page1" data-transition="slide">
+            History
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://www.facebook.com/StreetLinksLenderSolutions" data-transition="slide">
+            Leadership
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://twitter.com/StreetLinks" data-transition="slide">
+            Community
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div data-role="panel" id="panel9" data-position="left" data-display="reveal"
+    data-theme="a">
+      <ul data-role="listview" data-divider-theme="h" data-inset="false">
+        <li data-theme="a">
+          <a href="#page1" data-transition="slide">
+            History
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://www.facebook.com/StreetLinksLenderSolutions" data-transition="slide">
+            Leadership
+          </a>
+        </li>
+        <li data-theme="a">
+          <a href="https://twitter.com/StreetLinks" data-transition="slide">
+            Community
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div data-theme="d" data-role="header">
+      <span class="ui-title">
+      </span>
+      <a data-role="button" data-direction="reverse" data-transition="slide"
+      data-theme="c" href="#page1" data-icon="back" data-iconpos="left" class="ui-btn-left">
+        Back
+      </a>
+    </div>
+    <div data-role="content">
+      <div data-controltype="textblock">
+        <h1>
+          StreetLinks History
+        </h1>
+        <h2>
+          A Look Back at StreetLinks Lender Solutions
+          <sup>
+            ®
+          </sup>
+        </h2>
+        <p>
+          Our roots date back to 1995 when current StreetLinks Chief Strategy Officer,
+          Tony Ebeyer, founded Superior Appraisal Services, which grew to be the
+          largest and most technologically advanced appraisal firm in the Midwest.
+          Four former Superior appraisers still hold key management positions at
+          StreetLinks today.
+        </p>
+        <p>
+          In 2008, Superior's innovation and focus on quality, timely appraisals
+          was recognized as industry-leading in light of the new HVCC regulations.
+          The company was acquired in part by NovaStar Financial, bringing with it
+          key management staff, including current CEO, Steve Haslam. The company
+          was renamed StreetLinks National Appraisal Services and quickly became
+          one of the fastest growing, most reputable appraisal management companies
+          (AMCs) in the industry.
+        </p>
+        <h3>
+          Bringing Change to the Mortgage Valuation Industry
+        </h3>
+        <p>
+          Today under the StreetLinks Lender Solutions brand we continue to expand
+          and enhance our valuation offerings to maintain the highest level of quality
+          and service available on the market and serve as a true solution partner
+          to our clients.
+        </p>
+      </div>
+    </div>
+    <div data-theme="a" data-role="footer" data-position="fixed">
+      <h3>
+        Streetlinks Lender Solutions
+      </h3>
+    </div>
+  </div>
+  </body>
+  
+  <!-- Javascript -->
+  <script src="main.js"></script>
+  <script src="cordova-2.7.0.js"></script>
+  <script src="mustache.js"></script>
+  <script src="main.js"></script>
+
+  <!-- jQuery and jQuery Mobile -->
+  <link rel="stylesheet" href="jquery.mobile.structure-1.3.1.min.css" />
+  <script src="jquery-1.9.1.min.js">
+  </script>
+  <script src="jquery.mobile-1.3.1.min.js">
+  </script>
+    
+</html>
