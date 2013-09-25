@@ -44,3 +44,9 @@ $('#Instagram').on('click', function () {
         'Dismiss'
     );
 });
+
+
+
+
+Notification, Splashscreen, Connection, Geolocation
+
