@@ -1,53 +1,49 @@
+//When the device is ready check the connection
+$("document").ready(function checkconnection() {
+    checkConnection();
 
 
-<script>
-function onSuccess(heading) {
-    alert('Heading: ' + heading.magneticHeading);
-};
+});
 
-function onError(error) {
-    alert('CompassError: ' + error.code);
-};
+//Connection function
 
-navigator.compass.getCurrentHeading(onSuccess, onError);
+function checkConnection() {
+    var networkState = navigator.network.connection.type;
 
-</script>
-  
+    var states = {};
+    states[Connection.UNKNOWN] = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI] = 'WiFi connection';
+    states[Connection.CELL_2G] = 'Cell 2G connection';
+    states[Connection.CELL_3G] = 'Cell 3G connection';
+    states[Connection.CELL_4G] = 'Cell 4G connection';
+    states[Connection.NONE] = 'No network connection';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-var onSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
-};
-
-// onError Callback receives a PositionError object
-//
-function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');
+    alert('Your device has ' + states[networkState]);
 }
 
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
-</script>
+//Splashscreen
+$('#Community').on('click', function () {
+    navigator.splashscreen.show();
+
+    setTimeout(function () {
+        navigator.splashscreen.hide();
+    }, 2000);
+});
+
+
+
+//Notification
+$('#Instagram').on('click', function () {
+    function alertDismissed() {}
+
+    navigator.notification.alert(
+        'Thanks for checking out our photos!',
+        alertDismissed,
+        'Instagram',
+        'Dismiss'
+    );
+});
 
 
 
@@ -60,68 +56,34 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
 
 
+//Instagram - This can go up to the notification at the end.
+$('#Instagram').on('pageinit', function () {
+    function 
+
+
+$.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'jsonp'
+    success: function(received){
+        console.log(received);
+        $.each(received.data, function(index, photo){
+            var stRes = photo.user.id,
+            user_id = photo.user.id,
+            fullName = photo.user.full_name,
+            likes = photo.likes,
+            pic = "<li><img src='" + stRes + "' alt='" + user_id + "' /><h3>
+Created by: " + fullName + ", Likes: " + likes + "</h3></li>";
+
+                    $('#results').append(pic);
+        });
 
 
 
 
 
+    );
+});
 
 
 
-
-<script>
-    function init() {
-      document.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-    function onDeviceReady() {
-      alert('Welcome to our StreetLinks app!');
-    }
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
- function checkconnection() {
-        checkConnection();
-    }
-
-    function checkConnection() {
-        var networkState = navigator.network.connection.type;
-
-        var states = {};
-        states[Connection.UNKNOWN]  = 'Unknown connection';
-        states[Connection.ETHERNET] = 'Ethernet connection';
-        states[Connection.WIFI]     = 'WiFi connection';
-        states[Connection.CELL_2G]  = 'Cell 2G connection';
-        states[Connection.CELL_3G]  = 'Cell 3G connection';
-        states[Connection.CELL_4G]  = 'Cell 4G connection';
-        states[Connection.NONE]     = 'No network connection';
-
-        alert('Your device has ' + states[networkState]);
-    }
-
-</script>

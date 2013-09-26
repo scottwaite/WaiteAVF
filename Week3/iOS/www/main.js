@@ -48,7 +48,6 @@ $('#Instagram').on('click', function () {
 
 
 
-Notification, Splashscreen, Connection, Geolocation
 
 
 
@@ -57,13 +56,9 @@ Notification, Splashscreen, Connection, Geolocation
 
 
 
-
-
-
-
-
-
-/* Instagram
+//Instagram - This can go up to the notification at the end.
+$('#Instagram').on('pageinit', function () {
+    function 
 
 
 $.ajax({
@@ -78,16 +73,17 @@ $.ajax({
             fullName = photo.user.full_name,
             likes = photo.likes,
             pic = "<li><img src='" + stRes + "' alt='" + user_id + "' /><h3>
-created by: " + fullName + ", Likes: " + likes + "<h3></li>";
+Created by: " + fullName + ", Likes: " + likes + "</h3></li>";
 
                     $('#results').append(pic);
         });
-    }
-})
 
 
 
 
+
+    );
+});
 
 
 
