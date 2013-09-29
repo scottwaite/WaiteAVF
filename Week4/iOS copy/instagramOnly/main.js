@@ -1,6 +1,6 @@
 //Instagram
 $('#instagram').on('pageinit', function () {
-    var url = 'https://api.instagram.com/v1/users/376080995/media/recent?access_token=376080995.5b9e1e6.e3cdf1450ae345308e32fb59dc1d6150';
+    var url = 'https://api.instagram.com/v1/users/554363169/media/recent?access_token=554363169.9d8f735.d89a044a6dd64d598a7738241d7e1014';
     $.ajax({
         url: url,
         type: 'GET',
